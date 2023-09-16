@@ -19,12 +19,10 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GHCR_TOKEN }}
 
-
-      - name: Build and push
+      - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           context: ./rtorrent
           file: ./rtorrent/Dockerfile
           push: true
-          tags: user/repo:tag
-
+          tags: ghcr.io/selfish/ha-rtorrent-addon:latest

@@ -1,8 +1,8 @@
 {
   "build_from": {
-    "aarch64": "ghcr.io/selfish/rtorrent:aarch64-latest",
-    "amd64": "ghcr.io/selfish/rtorrent:amd64-latest",
-    "armv7": "ghcr.io/selfish/rtorrent:armv7-latest"
+    "aarch64": "ghcr.io/selfish/ha-rtorrent-addon:aarch64-latest",
+    "amd64": "ghcr.io/selfish/ha-rtorrent-addon:amd64-latest",
+    "armv7": "ghcr.io/selfish/ha-rtorrent-addon:armv7-latest"
   },
   "codenotary": {
     "signer": "youcangetselfish@gmail.com"

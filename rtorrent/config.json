@@ -2,7 +2,7 @@
   "name": "rTorrent",
   "description": "rTorrent Torrent client",
   "slug": "rtorrent",
-  "image": "ghcr.io/selfish/rtorrent-{arch}",
+  "image": "ghcr.io/selfish/ha-rtorrent-addon-{arch}",
   "version": "4.5.5",
   "url": "https://github.com/selfish/ha-addons",
   "arch": [
