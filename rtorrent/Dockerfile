@@ -1,4 +1,5 @@
-FROM debian:bullseye-slim
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 # Set environment variables for integration and runtime
 ENV DEBIAN_FRONTEND="noninteractive" \
