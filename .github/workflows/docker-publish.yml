@@ -6,10 +6,16 @@ on:
 
 jobs:
   push_to_registry:
-    name: Push Docker image to GitHub Container Registry
     runs-on: ubuntu-latest
+    name: Push Docker image to GitHub Container Registry
+    strategy:
+      matrix:
+        platform:
+          - aarch64
+          - amd64
+          - armv7
     steps:
-      - name: Check out the repo
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Login to GitHub Container Registry
@@ -25,4 +31,5 @@ jobs:
           context: ./rtorrent
           file: ./rtorrent/Dockerfile
           push: true
-          tags: ghcr.io/selfish/ha-rtorrent-addon:latest
+          tags: ghcr.io/selfish/ha-rtorrent-addon:${{ matrix.platform }}-latest
+          platforms: linux/${{ matrix.platform }}
