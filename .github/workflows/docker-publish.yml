@@ -14,6 +14,13 @@ jobs:
           - aarch64
           - amd64
           - armv7
+        include:
+          - platform: aarch64
+            build_from: ghcr.io/hassio-addons/debian-base/aarch64:7.1.0
+          - platform: amd64
+            build_from: ghcr.io/hassio-addons/debian-base/amd64:7.1.0
+          - platform: armv7
+            build_from: ghcr.io/hassio-addons/debian-base/armv7:7.1.0
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -33,3 +40,4 @@ jobs:
           push: true
           tags: ghcr.io/selfish/ha-rtorrent-addon:${{ matrix.platform }}-latest
           platforms: linux/${{ matrix.platform }}
+          args: BUILD_FROM=${{ matrix.build_from }}
